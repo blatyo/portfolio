@@ -5,6 +5,6 @@ class ArticlesController < ApplicationController
   def show
   end
   
-  def create
+  def post_receive_hook
   end
 end
