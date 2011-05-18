@@ -4,9 +4,9 @@ gem 'rails', '3.1.0.beta1'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
-gem 'pg'
 
 # Asset template engines
+gem 'haml', '~> 3.1.1'
 gem 'sass'
 gem 'coffee-script'
 gem 'uglifier'
@@ -19,16 +19,22 @@ gem 'jquery-rails'
 # Deploy with Capistrano
 # gem 'capistrano'
 
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
 group :production do
+  gem 'pg'
   gem 'therubyracer-heroku', '0.8.1.pre3'
 end
 
+group :development, :test do
+  gem 'sqlite3'
+  gem 'rspec-rails', '~> 2.3.1'
+end
+
 group :test do
-  # Pretty printed test output
-  gem 'turn', :require => false
 end
 
 group :development do
+  gem 'heroku'
+  gem 'hirb'
+  gem 'wirble'
+  gem 'ruby-debug19', :require => 'ruby-debug'
 end

@@ -49,5 +49,10 @@ module Portfolio
 
     # Enable the asset pipeline
     config.assets.enabled = true
+    
+    config.generators do |g|
+      g.test_framework :rspec
+      g.template_engine :haml
+    end
   end
 end
