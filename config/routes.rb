@@ -1,7 +1,7 @@
 Portfolio::Application.routes.draw do
   resources :articles, :only => [:index, :show] do
     collection do
-      post 'create'
+      post "create/#{ARTICLES_TOKEN}" => "articles#create"
     end
   end
   # The priority is based upon order of creation:
