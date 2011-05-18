@@ -6,6 +6,7 @@ gem 'rails', '3.1.0.beta1'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 # Asset template engines
+gem 'haml-rails'
 gem 'haml', '~> 3.1.1'
 gem 'sass'
 gem 'coffee-script'
