@@ -4,3 +4,4 @@ log/*.log
 tmp/
 .idea/
 config/initializers/articles_token.rb
+.sass-cache

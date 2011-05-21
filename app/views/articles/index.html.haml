@@ -1,5 +1,7 @@
 %section#articles
   - @articles.each do |article|
     %article
-      %h1 article.title
-      .body article.body
+      %h1
+        = article.title
+      .body
+        = article.body.html_safe

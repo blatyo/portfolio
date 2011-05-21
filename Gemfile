@@ -11,8 +11,11 @@ gem 'haml', '~> 3.1.1'
 gem 'sass'
 gem 'coffee-script'
 gem 'uglifier'
-
 gem 'jquery-rails'
+
+gem 'jsonpath', '~> 0.2.3'
+gem 'redcarpet', '~> 1.14.2'
+gem 'coderay'
 
 # Use unicorn as the web server
 # gem 'unicorn'

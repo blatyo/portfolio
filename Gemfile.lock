@@ -35,6 +35,7 @@ GEM
     arel (2.1.0)
     bcrypt-ruby (2.1.4)
     builder (3.0.0)
+    coderay (0.9.8)
     coffee-script (2.2.0)
       coffee-script-source
       execjs
@@ -61,6 +62,9 @@ GEM
     jquery-rails (1.0.2)
       railties (~> 3.0)
       thor (~> 0.14)
+    json (1.5.1)
+    jsonpath (0.2.3)
+      json
     launchy (0.4.0)
       configuration (>= 0.0.5)
       rake (>= 0.8.1)
@@ -98,6 +102,7 @@ GEM
       rake (>= 0.8.7)
       thor (~> 0.14.6)
     rake (0.8.7)
+    redcarpet (1.14.2)
     rest-client (1.6.1)
       mime-types (>= 1.16)
     rspec (2.3.0)
@@ -145,14 +150,17 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  coderay
   coffee-script
   haml (~> 3.1.1)
   haml-rails
   heroku
   hirb
   jquery-rails
+  jsonpath (~> 0.2.3)
   pg
   rails (= 3.1.0.beta1)
+  redcarpet (~> 1.14.2)
   rspec-rails (~> 2.3.1)
   ruby-debug19
   sass
