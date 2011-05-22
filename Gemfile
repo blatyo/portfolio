@@ -38,6 +38,7 @@ end
 
 group :development do
   gem 'heroku'
+  gem 'hub'
   gem 'hirb'
   gem 'wirble'
   gem 'ruby-debug19', :require => 'ruby-debug'

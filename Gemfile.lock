@@ -58,6 +58,7 @@ GEM
       term-ansicolor (~> 1.0.5)
     hike (1.0.0)
     hirb (0.4.5)
+    hub (1.6.1)
     i18n (0.6.0beta1)
     jquery-rails (1.0.2)
       railties (~> 3.0)
@@ -156,6 +157,7 @@ DEPENDENCIES
   haml-rails
   heroku
   hirb
+  hub
   jquery-rails
   jsonpath (~> 0.2.3)
   pg
