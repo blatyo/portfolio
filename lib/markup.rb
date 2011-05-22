@@ -1,6 +1,3 @@
-require 'redcarpet'
-require 'coderay'
-
 module Markup
   class << self
     def process(markdown)

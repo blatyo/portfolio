@@ -1,8 +1,12 @@
+require "#{Rails.root}/lib/post_receive_hook"
+require "#{Rails.root}/lib/article_post_receive_hook"
+require "#{Rails.root}/lib/markup"
+
 class Article < ActiveRecord::Base
-  class << self
-    def parse_file_name(file_name)
-      file_name =~ /(\d{4}-\d{2}-\d{2})\s(.+)\.md/
-      [$2, Date.parse($1)] #title, date
-    end
+  include PostReceiveHook
+  include ArticlePostReceiveHook
+  
+  def body=(markdown)
+    self[:body] = Markup.process(markdown)
   end
 end
