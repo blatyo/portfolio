@@ -4,6 +4,8 @@ Portfolio::Application.routes.draw do
       post "post_receive_hook/#{ARTICLES_TOKEN}" => "articles#post_receive_hook"
     end
   end
+
+  root :to => "articles#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
