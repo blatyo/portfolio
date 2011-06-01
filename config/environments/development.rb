@@ -23,3 +23,5 @@ Portfolio::Application.configure do
   config.action_dispatch.best_standards_support = :builtin
 end
 
+ARTICLES_TOKEN = "development"
+
