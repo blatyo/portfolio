@@ -1,5 +1,10 @@
 require 'spec_helper'
 
 describe Article do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "#body=" do
+    it "should convert markdown to html" do
+      article = Article.new(:title => "test", :body => "# header")      
+      article.body.should == "<h1>header</h1>\n"
+    end
+  end
 end
