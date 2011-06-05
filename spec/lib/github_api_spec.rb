@@ -1,3 +1,4 @@
+require 'spec_helper'
 require "#{Rails.root}/lib/github_api"
 
 describe GithubAPI do
