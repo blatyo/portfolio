@@ -12,16 +12,10 @@ gem 'sass'
 gem 'coffee-script'
 gem 'uglifier'
 gem 'jquery-rails'
-
-gem 'jsonpath', '~> 0.2.3'
 gem 'redcarpet', '~> 1.14.2'
 gem 'coderay'
 
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
+gem 'jsonpath', '~> 0.2.3'
 
 group :production do
   gem 'pg'
@@ -31,6 +25,7 @@ end
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails', '~> 2.6.1'
+  gem 'ruby-debug19', :require => 'ruby-debug'
 end
 
 group :test do
@@ -41,5 +36,4 @@ group :development do
   gem 'hub'
   gem 'hirb'
   gem 'wirble'
-  gem 'ruby-debug19', :require => 'ruby-debug'
 end
