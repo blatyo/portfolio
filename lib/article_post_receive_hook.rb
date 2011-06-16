@@ -5,7 +5,7 @@ module ArticlePostReceiveHook
 
   module ClassMethods
     def post_receive(push)
-      @push = Github::Push.new(push)
+      @push = GithubAPI::Push.new(push)
       import_articles
     end
 
@@ -14,12 +14,12 @@ module ArticlePostReceiveHook
     attr_reader :push
 
     def import_articles
-      create_or_update_article
+      create_or_update_articles
       delete_articles
     end
     
     def create_or_update_articles
-      (push.new_files + push.updated_files).each do |file_name|
+      (push.added + push.modified).each do |file_name|
         title, date, category, tags = parse_file_name(file_name)
         if title && date
           body = GithubAPI.get_file_with_file_name(push.owner, push.repository, 'master', file_name)
@@ -30,17 +30,17 @@ module ArticlePostReceiveHook
     end
     
     def delete_articles
-      push.deleted_files.each do |file_name|
+      push.removed.each do |file_name|
         title, date, category, tags = parse_file_name(file_name)
-        Article.find_by_title(title).delete
+        Article.find_by_title(title).delete if title && date
       end
     end
 
     def parse_file_name(file_name)
       file_name =~ /(\d{4}-\d{2}-\d{2})\s(.+?)(\[(.+)\])?(\{(.+)\})?\.md/
-      [ $2.strip,                       #title
+      [ $2.try(:strip),                 #title
         $1 ? Date.parse($1) : nil,      #date
-        $4.strip,                       #category
+        $4.try(:strip),                 #category
         $6 ? $6.strip.split(',') : []]  #tags
     end
   end
