@@ -1,10 +1,10 @@
 class ArticlesController < ApplicationController
   def index
-    @articles = Article.order("created_at desc")
-  end
-  
-  def search
-    @articles = Article.search(params[:query])
+    if params[:query]
+      @articles = Article.search(params[:query])
+    else
+      @articles = Article.order("created_at desc")
+    end
   end
 
   def show
