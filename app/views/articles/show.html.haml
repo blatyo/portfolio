@@ -1,2 +1,7 @@
-%h1 Articles#title:string
-%p Find me in app/views/articles/title:string.html.haml
+%article
+  %h1
+    = @article.title
+  .meta
+  = @article.generated_body.html_safe
+  .comments
+    = render_cell :comments, :index

@@ -76,7 +76,7 @@ module GithubAPI
     def file_changes
       changes = Hash.new{|h, k| h[k] = []}
       
-      JsonPath.new('$..commits').on(@push).to_a.first.each do |commit|
+      JsonPath.new('$..commits').on(@push).each do |commit|
         [:added, :modified, :removed].each do |change|
           JsonPath.new("$..#{change}").on(commit).to_a.flatten.each do |file_name|
             changes[file_name] << change

@@ -4,4 +4,4 @@
       %h1
         = article.title
       .body
-        = article.body.html_safe
+        = truncate_html(article.generated_body, :length => 300, :omission => "... #{link_to 'more', article}")

@@ -11,11 +11,12 @@ class Article < ActiveRecord::Base
     
     module InstanceMethods
       def create_or_update_index
-        index.document(id).add({
+        doc = {
           :title => title,
-          :text => body,
-          :tags => tags
-        })
+          :text => body
+        }
+        doc[:tags] = tags unless tags.blank?
+        index.document(id).add(doc)
         index.document(id).update_categories({:category => category})
       end
       

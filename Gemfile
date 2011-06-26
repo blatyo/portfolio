@@ -1,7 +1,6 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.0.rc4'
-
 gem 'rake'
 
 # Asset template engines
@@ -19,6 +18,10 @@ gem 'configatron', '~> 2.8.1'
 gem 'cells', '~> 3.6.0'
 
 gem 'jsonpath', '~> 0.2.3'
+
+gem 'truncate_html', "~> 0.5.1"
+
+# Services
 gem 'indextank'
 
 group :production do

@@ -7,7 +7,7 @@ namespace :articles do
   desc "Imports articles from specified repo"
   task :import => :environment do
     user, repository = ENV['repo'].split('/')
-    articles = GithubAPI.get_blobs(user, repository, 'master').keys.select{|title| title =~ /\d{4}-\d{2}-\d{2}/ }
+    articles = GithubAPI.get_blobs(user, repository, 'master').keys
 
     json = {payload: {
       commits: {

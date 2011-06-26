@@ -28,7 +28,7 @@ class Article < ActiveRecord::Base
             article.update_attributes!(
               :body => body, 
               :category => category,
-              :tags => tags.join(" "),
+              :tags => tags,
               :created_at => time
             )
           end
@@ -47,7 +47,7 @@ class Article < ActiveRecord::Base
         [ $2.try(:strip),                 #title
           $1 ? Time.parse($1) : nil,      #date
           $4.try(:strip) || "None",       #category
-          $6 ? $6.strip.split(',') : []]  #tags
+          $6.try(:strip) || ""]  #tags
       end
     end
   end
