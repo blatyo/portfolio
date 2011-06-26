@@ -2,20 +2,24 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.0.rc4'
 
-# Bundle edge Rails instead:
-# gem 'rails',     :git => 'git://github.com/rails/rails.git'
+gem 'rake'
 
 # Asset template engines
 gem 'haml-rails'
 gem 'haml', '~> 3.1.1'
 gem 'sass'
 gem 'coffee-script'
+gem 'coffee-filter', '~> 0.1.1'
 gem 'uglifier'
 gem 'jquery-rails'
 gem 'redcarpet', '~> 1.14.2'
 gem 'coderay'
 
+gem 'configatron', '~> 2.8.1'
+gem 'cells', '~> 3.6.0'
+
 gem 'jsonpath', '~> 0.2.3'
+gem 'indextank'
 
 group :production do
   gem 'pg'

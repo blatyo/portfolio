@@ -1,10 +1,11 @@
-require "#{Rails.root}/lib/article/post_receive_hook"
-require "#{Rails.root}/lib/markup"
+require File.dirname(__FILE__) + "/article/post_receive_hook"
+require File.dirname(__FILE__) + "/article/markup"
+require File.dirname(__FILE__) + "/article/index"
 
 class Article < ActiveRecord::Base
-  include PostReceiveHook
+  include ::Article::PostReceiveHook
+  include ::Article::Markup
+  include ::Article::Index
   
-  def body=(markdown)
-    self[:body] = Markup.process(markdown)
-  end
+  validates_presence_of :title, :body, :category
 end

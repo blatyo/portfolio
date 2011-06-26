@@ -1,0 +1,1 @@
+Configatron::Rails.init(File.join(Rails.root, 'config', 'configatron'), Rails.env)

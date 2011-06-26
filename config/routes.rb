@@ -2,6 +2,7 @@ Portfolio::Application.routes.draw do
   resources :articles, :only => [:index, :show] do
     collection do
       post "post_receive_hook/#{ARTICLES_TOKEN}" => "articles#post_receive_hook"
+      get "search" => "articles#search"
     end
   end
 

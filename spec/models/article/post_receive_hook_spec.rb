@@ -16,8 +16,9 @@ describe Article::PostReceiveHook do
     end.should change(Article, :count).by(1)
     
     article = Article.first
+    article.body.should == "bob"
     article.title.should == 'bobby'
-    article.body.should == "<p>bob</p>\n"
+    article.generated_body.should == "<p>bob</p>\n"
   end
   
   it "should update files that have been modified in the post receive hook" do
@@ -30,7 +31,8 @@ describe Article::PostReceiveHook do
     end.should_not change(Article, :count)
     
     article.reload
-    article.body.should == "<p>bob</p>\n"
+    article.body.should == "bob"
+    article.generated_body.should == "<p>bob</p>\n"
   end
   
   it "should ignoe a new file that has been added in the post receive hook if it doesn't match an article format" do
