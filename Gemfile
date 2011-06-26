@@ -6,7 +6,7 @@ gem 'rake', '~> 0.9.2'
 # Asset template engines
 gem 'haml-rails'
 gem 'haml', '~> 3.1.1'
-gem 'sass'
+gem 'sass-rails'
 gem 'coffee-script'
 gem 'coffee-filter', '~> 0.1.1'
 gem 'uglifier'
