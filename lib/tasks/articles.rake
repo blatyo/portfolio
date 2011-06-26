@@ -9,19 +9,19 @@ namespace :articles do
     user, repository = ENV['repo'].split('/')
     articles = GithubAPI.get_blobs(user, repository, 'master').keys
 
-    json = {payload: {
-      commits: {
+    json = {
+      commits: [{
         added: articles,
         modified: [],
         removed: [],
-      },
+      }],
       repository: {
         name: repository,
         owner: {
           name: user
         }
       }
-    }}.to_json
+    }.to_json
 
     Article.post_receive(json)
   end

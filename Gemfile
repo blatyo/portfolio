@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.0.rc4'
-gem 'rake'
+gem 'rake', '~> 0.9.2'
 
 # Asset template engines
 gem 'haml-rails'
@@ -17,7 +17,7 @@ gem 'coderay'
 gem 'configatron', '~> 2.8.1'
 gem 'cells', '~> 3.6.0'
 
-gem 'jsonpath', '~> 0.2.3'
+gem 'jsonpath', '~> 0.4.0'
 
 gem 'truncate_html', "~> 0.5.1"
 

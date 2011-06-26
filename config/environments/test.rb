@@ -39,3 +39,4 @@ Portfolio::Application.configure do
 end
 
 ARTICLES_TOKEN = 'test'
+configatron.indextank.use = false

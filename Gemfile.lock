@@ -85,9 +85,8 @@ GEM
     jquery-rails (1.0.11)
       railties (~> 3.0)
       thor (~> 0.14)
-    json (1.5.2)
-    jsonpath (0.2.3)
-      json
+    jsonpath (0.4.0)
+      yajl-ruby
     launchy (0.4.0)
       configuration (>= 0.0.5)
       rake (>= 0.8.1)
@@ -192,10 +191,10 @@ DEPENDENCIES
   hub
   indextank
   jquery-rails
-  jsonpath (~> 0.2.3)
+  jsonpath
   pg
   rails (= 3.1.0.rc4)
-  rake
+  rake (~> 0.9.2)
   redcarpet (~> 1.14.2)
   rspec-rails (~> 2.6.1)
   ruby-debug19
