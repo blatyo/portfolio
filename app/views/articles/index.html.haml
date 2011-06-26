@@ -1,7 +1,7 @@
 %section#articles
   .search
     = form_tag(articles_path, :method => :get) do
-      = search_field_tag :query
+      = search_field_tag :query, @query
   - @articles.each do |article|
     %article
       %h1

@@ -1,7 +1,8 @@
 class ArticlesController < ApplicationController
   def index
     if params[:query]
-      @articles = Article.search(params[:query])
+      @query = params[:query]
+      @articles = Article.search(@query)
     else
       @articles = Article.order("created_at desc")
     end

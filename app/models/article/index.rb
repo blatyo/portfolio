@@ -33,7 +33,7 @@ class Article < ActiveRecord::Base
     
     module ClassMethods
       def search(query, *categories)
-        category_filter = categories.blank? ? nil : {:category_filters => {:category => categories}}
+        category_filter = categories.blank? ? {} : {:category_filters => {:category => categories}}
         results = index.search(query, category_filter)
         find(JsonPath.new('$..docid').on(results).map(&:to_i))
       end
