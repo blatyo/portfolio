@@ -14,5 +14,6 @@ class ArticlesController < ApplicationController
 
   def post_receive_hook
     Article.post_receive(params[:payload])
+    render :nothing => true
   end
 end
