@@ -13,7 +13,8 @@ class Article < ActiveRecord::Base
       def create_or_update_index
         doc = {
           :title => title,
-          :text => body
+          :text => body,
+          :timestamp => created_at.to_time.to_i
         }
         doc[:tags] = tags unless tags.blank?
         index.document(id).add(doc)
