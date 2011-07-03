@@ -7,5 +7,10 @@ class Article < ActiveRecord::Base
   include ::Article::Markup
   include ::Article::Index
   
-  validates_presence_of :title, :body, :category
+  has_one :category_association, :as => :categorical
+  has_one :category, :through => :category_association
+  has_many :taggables, :as => :taggable
+  has_many :tags, :through => :taggables
+  
+  validates_presence_of :title, :body
 end

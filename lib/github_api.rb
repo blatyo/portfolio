@@ -48,6 +48,10 @@ module GithubAPI
       @modified
     end
     
+    def added_and_modified
+      @added_and_modified ||= (added + modified)
+    end
+    
     def removed
       group_files
       

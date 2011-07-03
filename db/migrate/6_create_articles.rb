@@ -4,8 +4,6 @@ class CreateArticles < ActiveRecord::Migration
       t.string  :title
       t.text    :body
       t.text    :generated_body
-      t.string  :category,      :default => "None"
-      t.string  :tags,          :default => ""
 
       t.timestamps
     end
