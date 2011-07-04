@@ -16,9 +16,9 @@ class Article < ActiveRecord::Base
           :text => body,
           :timestamp => created_at.to_time.to_i
         }
-        doc[:tags] = tags unless tags.blank?
+        doc[:tags] = tags.collect(&:name) unless tags.blank?
         index.document(id).add(doc)
-        index.document(id).update_categories({:category => category})
+        index.document(id).update_categories({:category => category.name}) if category
       end
       
       def remove_index

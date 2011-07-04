@@ -112,8 +112,4 @@ describe Article::PostReceiveHook do
       end
     end
   end
- 
-  def commit(added, modified, removed)
-    {:added => added, :modified => modified, :removed => removed}
-  end
 end
