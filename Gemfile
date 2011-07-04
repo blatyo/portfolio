@@ -20,6 +20,7 @@ gem 'cells', '~> 3.6.0'
 gem 'jsonpath', '~> 0.4.0'
 
 gem 'truncate_html', "~> 0.5.1"
+gem 'validate_url'
 
 # Services
 gem 'indextank'

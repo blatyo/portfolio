@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe Tag do
-  it "should require a name" do
-    Tag.create.errors.size.should == 1
-  end
+  it{ should have_valid(:name).when("cool") }
+  it{ should_not have_valid(:name).when(nil) }
 end
