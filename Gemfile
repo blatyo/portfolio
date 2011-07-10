@@ -34,6 +34,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails', '~> 2.6.1'
   gem 'ruby-debug19', :require => 'ruby-debug'
+  gem 'ammeter' #gives an rspec supported plugin generator
 end
 
 group :test do

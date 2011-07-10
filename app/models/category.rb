@@ -6,9 +6,9 @@ class Category < ActiveRecord::Base
   
   
   class << self
-    def associate(categorical, category_name)
+    def update_association(categorical, category_name)
       category = Category.find_or_create_by_name(category_name || "None")
-      CategoryAssociation.create(:category => category, :categorical => categorical)
+      categorical.update_attributes(:category => category)
     end
   end
 end

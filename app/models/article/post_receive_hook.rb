@@ -30,8 +30,8 @@ class Article < ActiveRecord::Base
               :created_at => time
             )
             
-            Category.associate(article, category_name)
-            Tag.associate(article, tag_names)
+            Category.update_association(article, category_name)
+            Tag.update_association(article, tag_names)
           end
         end
       end

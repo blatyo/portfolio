@@ -1,4 +1,8 @@
 class Project < ActiveRecord::Base
+  include ::Project::PostReceiveHook
+  include ::Project::Markup
+  include ::Project::Index
+  
   has_one :category_association, :as => :categorical
   has_one :category, :through => :category_association
   has_many :taggables, :as => :taggable

@@ -58,6 +58,8 @@ ActiveRecord::Schema.define(:version => 7) do
 
   create_table "urls", :force => true do |t|
     t.string   "link"
+    t.integer  "linkable_id"
+    t.string   "linkable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
